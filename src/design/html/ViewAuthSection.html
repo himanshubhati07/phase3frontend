@@ -1,0 +1,78 @@
+<div id="view-auth" class="view-login">
+  <canvas id="loginBg" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></canvas>
+  <button class="login-theme-toggle" id="loginThemeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+    <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg>
+    <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+  </button>
+  <div class="login-card" id="signinCard">
+    <div class="login-mark" style="position:relative;width:48px;height:48px;margin:0 auto 16px;">
+      <img class="logo-dark" src="/design-assets/01.png" alt="Xccelera" style="width:48px;height:48px;object-fit:contain;display:block;">
+      <img class="logo-light" src="/design-assets/02.png" alt="Xccelera" style="width:48px;height:48px;object-fit:contain;display:none;">
+    </div>
+    <h1 id="authHeading">XCore organizations</h1>
+    <div class="login-sub" id="authSub">SIGN IN OR CREATE AN ORG</div>
+
+    <div class="join-banner" id="joinBanner" style="display:none;">
+      <svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+      <span>You're joining <b id="joinOrgName">—</b> via your team's invite link.</span>
+    </div>
+
+    <div class="auth-tabs" id="authTabs">
+      <button class="auth-tab active" id="authTabSignin" onclick="switchAuthTab('signin')">Sign in</button>
+      <button class="auth-tab" id="authTabSignup" onclick="switchAuthTab('signup')">Create org account</button>
+    </div>
+
+    
+    <div id="authSignin">
+      <div class="sso-stack">
+        <button class="sso-btn" onclick="doLogin()">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24"><path d="M21 12.2c0-.7-.06-1.4-.18-2H12v3.8h5.05c-.22 1.15-.9 2.13-1.9 2.79v2.3h3.07c1.8-1.66 2.78-4.1 2.78-6.9z" fill="#0e60ff" stroke="none" /><path d="M12 22c2.6 0 4.77-.86 6.36-2.33l-3.07-2.3c-.85.57-1.95.9-3.29.9-2.53 0-4.67-1.7-5.44-4H3.4v2.37C4.98 19.86 8.22 22 12 22z" fill="#46fffb" stroke="none" /><path d="M6.56 14.27c-.2-.57-.3-1.17-.3-1.77s.1-1.2.3-1.77V8.36H3.4A9.96 9.96 0 002 12.5c0 1.6.4 3.1 1.4 4.14z" fill="#5a8aff" stroke="none" /><path d="M12 6.7c1.4 0 2.66.48 3.65 1.43l2.74-2.73C16.76 3.7 14.6 2.8 12 2.8 8.22 2.8 4.98 4.94 3.4 8.36l3.16 2.37c.77-2.3 2.91-4.03 5.44-4.03z" fill="#0e60ff" stroke="none" /></svg>
+          Continue with Google Workspace
+        </button>
+      </div>
+      <div class="divider">or</div>
+      <div class="field">
+        <label>Work email</label>
+        <input type="email" placeholder="you@xccelera.ai" id="signinEmail" value="priya.iyer@xccelera.ai">
+      </div>
+      <div class="field" style="margin-bottom:6px;">
+        <label>Password</label>
+        <input type="password" placeholder="••••••••••" id="signinPassword" value="••••••••••">
+      </div>
+      <div class="field-err" id="signinErr">Enter your work email and password</div>
+      <button class="btn primary block" style="margin-top:14px;" onclick="doLogin()">Sign in as org admin</button>
+      <div class="login-fine">Signing in opens your org's team dashboard directly.</div>
+    </div>
+
+    
+    <div id="authSignup" style="display:none;">
+      <div class="field">
+        <label>Your full name</label>
+        <input type="text" placeholder="e.g. Priya Iyer" id="suName" value="Priya Iyer">
+      </div>
+      <div class="field">
+        <label>Work email</label>
+        <input type="email" placeholder="you@xccelera.ai" id="suEmail" value="priya.iyer@xccelera.ai">
+      </div>
+      <div class="field">
+        <label>Organization name</label>
+        <input type="text" placeholder="e.g. Xccelera Labs" id="suOrg" value="xccelera-production">
+      </div>
+      <div class="field" style="margin-bottom:14px;">
+        <label>Password</label>
+        <input type="password" placeholder="Create a password" id="suPassword" value="">
+      </div>
+      <div class="field" style="margin-bottom:6px;">
+        <label>Confirm password</label>
+        <input type="password" placeholder="Re-enter your password" id="suPassword2" value="">
+      </div>
+      <label class="terms-row">
+        <input type="checkbox" id="suTerms">
+        <span>I agree to the <a href="#" onclick="return false;" style="color:var(--indigo-bright);font-weight:600;">Terms of Service</a> and <a href="#" onclick="return false;" style="color:var(--indigo-bright);font-weight:600;">Privacy Policy</a></span>
+      </label>
+      <div class="field-err" id="signupErr">Fill in your name, email and org name</div>
+      <button class="btn primary block" style="margin-top:8px;" onclick="doSignup()">Create org account</button>
+      <div class="login-fine">You'll be the org admin — next you'll set up git access and invite your team.</div>
+    </div>
+  </div>
+</div>

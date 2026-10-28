@@ -1,0 +1,18 @@
+<div class="modal-overlay" id="profileModal">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3>Update profile</h3>
+      <button class="modal-close" onclick="closeModal('profileModal')"><svg class="icon" width="14" height="14"><path d="M18 6L6 18M6 6l12 12" /></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="avatar-picker" id="avatarPicker"></div>
+      <div class="field"><label>Full name</label><input type="text" id="pfName"></div>
+      <div class="field"><label>Work email</label><input type="email" id="pfEmail"></div>
+      <div class="field" style="margin-bottom:0;"><label>New password (optional)</label><input type="password" id="pfPassword" placeholder="Leave blank to keep current password"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn danger" onclick="doLogoutFromProfile()">Sign out</button>
+      <button class="btn primary" onclick="saveProfile()">Save changes</button>
+    </div>
+  </div>
+</div>

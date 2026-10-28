@@ -1,0 +1,17 @@
+<div class="modal-overlay" id="newTeamModal">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3>New team</h3>
+      <button class="modal-close" onclick="closeModal('newTeamModal')"><svg class="icon" width="14" height="14"><path d="M18 6L6 18M6 6l12 12" /></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field" style="margin-bottom:14px;"><label>Team name</label><input type="text" id="ntName" placeholder="e.g. Platform Team"></div>
+      <div class="field" style="margin-bottom:0;"><label>Add members now (optional)</label></div>
+      <div id="ntMemberPicker"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn secondary" onclick="closeModal('newTeamModal')">Cancel</button>
+      <button class="btn primary" onclick="submitNewTeam()">Create team</button>
+    </div>
+  </div>
+</div>

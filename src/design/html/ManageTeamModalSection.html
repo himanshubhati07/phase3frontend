@@ -1,0 +1,17 @@
+<div class="modal-overlay" id="manageTeamModal">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3 id="mtTitle">Manage team</h3>
+      <button class="modal-close" onclick="closeModal('manageTeamModal')"><svg class="icon" width="14" height="14"><path d="M18 6L6 18M6 6l12 12" /></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field" style="margin-bottom:16px;"><label>Team name</label><input type="text" id="mtName"></div>
+      <div class="field" style="margin-bottom:8px;"><label>Members</label></div>
+      <div id="mtMemberPicker"></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn danger" onclick="deleteTeam()">Delete team</button>
+      <button class="btn primary" onclick="saveManageTeam()">Save changes</button>
+    </div>
+  </div>
+</div>
