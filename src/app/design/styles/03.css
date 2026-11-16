@@ -1,0 +1,11 @@
+#xc-studio-host{position:fixed;inset:0;z-index:9000;background:var(--bg,#f5f7fb)}
+#xc-studio-host[hidden]{display:none}
+#xc-studio-host iframe{display:block;width:100%;height:100%;border:0;background:transparent}
+html.xc-studio-on,html.xc-studio-on body{overflow:hidden}
+#xc-studio-back{position:fixed;right:20px;bottom:20px;z-index:8999;display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border:0;border-radius:999px;background:#0e60ff;color:#fff;font:600 13px/1 Poppins,system-ui,sans-serif;box-shadow:0 10px 30px -8px rgba(14,96,255,.6);cursor:pointer;animation:xcBackIn .35s ease both}
+#xc-studio-back:hover{background:#0040e0}
+#xc-studio-back[hidden]{display:none}
+body:has(#xc-studio-back:not([hidden])) main{padding-bottom:76px}
+#xc-studio-back svg{width:16px;height:16px}
+@keyframes xcBackIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (max-width:600px){#xc-studio-back{right:12px;bottom:12px;left:12px;justify-content:center}}

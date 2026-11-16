@@ -1,0 +1,42 @@
+/* ===== polish layer: icons, More menu, modal reports ===== */
+svg.xi{width:1em;height:1em;flex:none;display:inline-block;vertical-align:-.14em;stroke-width:2}
+svg.xi-emo{margin:0 .08em}
+i.xfa{display:inline-flex;align-items:center;justify-content:center;font-style:normal;line-height:1}
+i.xfa svg{width:1em;height:1em}
+/* one stroke weight + rounded caps for every 24-grid line icon */
+svg[viewBox="0 0 24 24"][fill="none"]{stroke-linecap:round;stroke-linejoin:round}
+svg[viewBox="0 0 24 24"][fill="none"][stroke]:not([stroke-width="0"]){stroke-width:2}
+svg[viewBox="0 0 24 24"][fill="none"][stroke] :is(path,line,polyline,polygon,circle,rect,ellipse)[stroke-width]{stroke-width:2}
+/* More overflow */
+.xm-h{display:none!important}
+.xm-more{display:inline-flex;align-items:center;gap:6px}
+.xm-more svg{width:15px;height:15px}
+.xm-menu{position:fixed;z-index:9999;min-width:200px;max-width:min(300px,calc(100vw - 16px));max-height:min(60vh,420px);overflow:auto;padding:6px;border-radius:14px;
+  background:var(--panel,#fff);border:1px solid var(--border,var(--line,#e2e8f0));box-shadow:0 18px 50px -12px rgba(15,23,42,.35),0 2px 6px rgba(15,23,42,.08);animation:xmIn .14s ease-out}
+@keyframes xmIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.xm-item{display:flex;align-items:center;gap:10px;width:100%;padding:9px 11px;border:0;background:none;border-radius:9px;text-align:left;cursor:pointer;
+  font:500 13px var(--font-body,var(--body,inherit));color:var(--ink,inherit)}
+.xm-item svg{width:15px;height:15px;flex:none;opacity:.8}
+.xm-item:hover:not(:disabled),.xm-item:focus-visible{background:var(--blue-dim,rgba(14,96,255,.1));outline:none}
+.xm-item.danger{color:var(--danger,var(--rose,#e11d48))}
+.xm-item:disabled{opacity:.45;cursor:not-allowed}
+/* modal reports */
+table.xm-stack,table.xm-stack tbody,table.xm-stack tr,table.xm-stack td{display:block;width:100%}
+table.xm-stack thead{display:none}
+table.xm-stack tr{border:1px solid var(--border,var(--line,#e2e8f0));border-radius:12px;padding:6px 12px;margin-bottom:10px;background:var(--panel-raised,var(--panel-2,transparent))}
+table.xm-stack td{display:flex!important;justify-content:space-between;align-items:center;gap:12px;padding:7px 0!important;border:0!important;border-bottom:1px solid var(--border,var(--line,#eef2f7))!important;text-align:right;min-width:0;white-space:normal!important}
+table.xm-stack td:last-child{border-bottom:0!important}
+table.xm-stack td::before{content:attr(data-label);flex:none;max-width:45%;text-align:left;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted,var(--ink-3,#64748b))}
+table.xm-stack td:not([data-label])::before,table.xm-stack td[data-label=""]::before{display:none}
+table.xm-stack td>*{min-width:0}
+.xm-data{margin-top:14px}
+.xm-data-h{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted,var(--ink-3,#64748b));margin-bottom:6px}
+.xm-dt{width:100%;border-collapse:collapse;font-size:12px}
+.xm-dt th,.xm-dt td{padding:6px 8px;border-bottom:1px solid var(--border,var(--line,#eef2f7));text-align:right;white-space:nowrap}
+.xm-dt th:first-child,.xm-dt td:first-child{text-align:left}
+.xm-dt th{font-weight:600;color:var(--muted,var(--ink-3,#64748b));font-size:11px}
+@media (orientation:landscape) and (min-width:561px){.xm-data{display:none}}
+/* CSS-styled 24-grid icons (no attributes) share the same weight; brand marks excluded */
+svg[viewBox="0 0 24 24"]:not(.ms):not(.gg):not([class*="logo"]):not([class*="brand"]){stroke-width:2!important}
+.launch.um-btn svg{fill:none!important;stroke:currentColor!important}
+.xm-more.xm-icon span{display:none}.xm-more.xm-icon{padding-left:10px!important;padding-right:10px!important;gap:0}
