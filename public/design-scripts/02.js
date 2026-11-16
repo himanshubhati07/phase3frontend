@@ -1,0 +1,1 @@
+(function(){var t='light';try{var v=localStorage.getItem('xc-ui-theme');if(v==='dark'||v==='light')t=v;}catch(e){}document.documentElement.setAttribute('data-theme',t);})();

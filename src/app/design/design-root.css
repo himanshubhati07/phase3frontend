@@ -1,0 +1,3 @@
+/* The mount node wraps the page and was not part of it: without this its missing height stops the page's panels from scrolling inside
+   (the page's rules for the body and for what is directly inside it, e.g. a flex column that fills the screen, then do not apply). */
+app-root, app-design-page { display: contents; }
