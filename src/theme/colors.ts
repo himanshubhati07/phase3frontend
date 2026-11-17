@@ -1,7 +1,7 @@
 export const colors = {
-  primary: '#0e60ff',
-  primaryDark: '#0030e0',
-  primaryLight: '#dbe4ff',
+  primary: '#1a1a1a',
+  primaryDark: '#0d0d0d',
+  primaryLight: '#4d4d4d',
   accent: '#a594ff',
   background: '#070b14',
   surface: '#ffffff',
@@ -14,7 +14,7 @@ export const colors = {
   success: '#10b981',
   warning: '#f59e0b',
   error: '#ef4444',
-  info: '#0e60ff',
+  info: '#1a1a1a',
   shadowColor: '#000000',
 } as const;
 
