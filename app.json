@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "android new",
+    "slug": "androidnew",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.generated.androidnew",
+      "buildNumber": "1"
+    },
+    "android": {
+      "package": "com.generated.androidnew",
+      "softwareKeyboardLayoutMode": "pan"
+    },
+    "plugins": [
+      "./withFollyCharTraitsFix.js",
+      "./withOtherFlagsArrayFix.js"
+    ]
+  }
+}
