@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "android new",
+    "slug": "androidnew",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "platforms": ["ios", "android", "web"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.generated.androidnew"
+    },
+    "android": {
+      "package": "com.generated.androidnew",
+      "softwareKeyboardLayoutMode": "pan"
+    }
+  }
+}
