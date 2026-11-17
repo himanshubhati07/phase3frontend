@@ -1,29 +1,22 @@
-# html — Routes & Navigation
+# android new — Screens & Navigation
 
 ## How to run
-cd /workspace/frontend_runs/d4a2df3d-a046-4e4a-ba19-c3695df63309/project
-npm install --legacy-peer-deps && npm run dev
-Then open http://localhost:39629
+cd /workspace/frontend_runs/23752017-1802-4837-942c-0e9a26978eeb/project
+npm install --legacy-peer-deps && npx expo start
+# Press 'a' for Android, 'i' for iOS simulator, 'w' for web,
+# or scan the QR code with Expo Go.
 
-## Routes
-
-| Route | Page file | Description |
-|-------|-----------|-------------|
-| / | src/design/DesignPage.svelte | XCore onboarding page (exact HTML conversion) |
-| * | src/pages/NotFound.svelte | Not found, with Go Home link |
-
-The design is a single-page app: the sign-in/create-org views, the authenticated
-team dashboard, and the profile / new team / manage team modals are all views
-inside `/`, switched by the page's own script (public/design-scripts/01.js).
-Section markup lives in src/design/html/*.html (byte-identical to the design
-source) and is mounted by the matching src/design/*Section.svelte component.
+## Screens
+| Screen | File | Description |
+|--------|------|-------------|
+| Page (/) | src/screens/PageScreen.tsx | Full-screen WebView of the Xccelera AI sign-in page (src/design/page) |
+| NotFound | src/screens/NotFoundScreen.tsx | Catch-all "Screen not found" with Go Back |
 
 ## Navigation map
-- Any unknown URL -> NotFound
-- NotFound -> / (Go Home)
+- Page is the initial screen (headerShown: false). All interaction happens inside the web view.
 
 ## Shared components
-None; section components live in src/design.
+None (src/components not used; the page is the HTML itself).
 
 ## Design tokens
-None; styling comes entirely from src/design/styles/01.css.
+primary, primaryDark, primaryLight, accent, background, surface, card, border, textPrimary, textSecondary, textDisabled, textInverse, success, warning, error, info, shadowColor
